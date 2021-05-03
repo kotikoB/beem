@@ -1,6 +1,5 @@
 -- Create the query to list the top 3 orders and from which
 -- campaign it has been bought and by which user. This will help reduce the cost of campaigns and increase revenue.
-
 SELECT 
         o.order_id
         ,u.name
@@ -11,6 +10,7 @@ SELECT
     ORDER BY o.value desc
     LIMIT 3;
 
+--Create a query to list 3 most revenue generating campaigns.
 SELECT c.campaign_name
     ,sum(o.total) as Revenue
     FROM campaigns c
