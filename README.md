@@ -11,7 +11,7 @@
 -   The app uses nodemon to run in development mode. In case it does not run after installing node_modules, run `npm i -g nodemon` to install nodemon globally then run the above command again.
 -   N/B: All requests are get requests
 
-### Scrap Data
+### Scrap Data / Populate JSON data
 
 `localhost:PORT/api/`
 
