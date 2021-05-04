@@ -17,7 +17,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/get-with-query', (req, res) => {
-    const data = require('../MCC.json');
+    let data;
+
+    try {
+        data = require('../MCC.json');
+    } catch (err) {
+        res.status(400).json(err);
+    }
+
+    // terminate if there is no data
+    if (!data || data === null || data === undefined) {
+        return res.status(400).json({ message: 'No data to process' });
+    }
 
     // Read query pameters from URL
     const MCC = req.query.MCC;
